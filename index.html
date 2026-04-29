@@ -3,309 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAMPLE STYLISH | Barber & Style</title>
+    <title>Gabo | Hair Style & Grooming</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<style>
-    /* =========================================
-       1. ESTILOS GENERALES (BASE / PC)
-       ========================================= */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        background-color: #051020;
-        color: #e0e6ed;
-        line-height: 1.6;
-        overflow-x: hidden;
-    }
-
-    h1, h2, h3 {
-        text-transform: uppercase;
-        letter-spacing: 3px;
-    }
-
-    /* Degradado de texto STYLISH */
-    .text-gradient {
-        background: linear-gradient(90deg, #4facfe 0%, #00f2fe 50%, #a18cd1 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    /* --- HERO / INTRO --- */
-    header {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        position: relative;
-        background-image: url('https://images.pexels.com/photos/7697712/pexels-photo-7697712.jpeg'); 
-        background-attachment: fixed; /* Parallax activo en PC */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(5, 16, 32, 0.7);
-        backdrop-filter: blur(3px);
-        background: linear-gradient(to bottom, rgba(5,16,32,0.6) 0%, rgba(5,16,32,0.9) 80%, #051020 100%);
-        z-index: 1;
-    }
-
-    .hero-content {
-        z-index: 2;
-        padding: 20px;
-        max-width: 800px; /* Limita el ancho en PC grandes */
-    }
-
-    .hero-content h1 {
-        font-size: 4.5rem; /* Grande para PC */
-        font-weight: 800;
-        margin-bottom: 10px;
-        text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    .hero-content p {
-        font-size: 1.3rem;
-        color: #a0aec0;
-        letter-spacing: 2px;
-    }
-
-    .btn-reservar {
-        display: inline-block;
-        margin-top: 30px;
-        padding: 15px 40px;
-        border: 1px solid rgba(79, 172, 254, 0.5);
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        letter-spacing: 2px;
-        transition: all 0.3s ease;
-        background: rgba(5, 16, 32, 0.8);
-        cursor: pointer;
-    }
-
-    .btn-reservar:hover {
-        background: linear-gradient(90deg, #4facfe 0%, #a18cd1 100%);
-        border-color: transparent;
-        color: #051020;
-        font-weight: bold;
-    }
-
-    /* --- SECCIONES --- */
-    section {
-        padding: 100px 15%; /* Mucho espacio a los lados en PC */
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 60px;
-        font-size: 2rem;
-        color: #4facfe;
-    }
-
-    /* --- GALERÍA --- */
-    .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 Columnas */
-        gap: 30px;
-    }
-
-    .gallery-item {
-        position: relative;
-        height: 450px; /* Altura generosa en PC */
-        overflow: hidden;
-        border-radius: 4px;
-    }
-
-    .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s ease, filter 0.6s ease;
-        filter: grayscale(40%);
-    }
-
-    .gallery-item:hover img {
-        transform: scale(1.05);
-        filter: grayscale(0%);
-    }
-
-    /* --- RECOMENDACIONES --- */
-    #reviews {
-        background: linear-gradient(to right, #051020, #08162b);
-    }
-
-    .reviews-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-    }
-
-    .review-card {
-        flex: 1;
-        background: rgba(255, 255, 255, 0.03);
-        padding: 40px;
-        border-left: 2px solid #a18cd1;
-        border-radius: 0 10px 10px 0;
-        transition: transform 0.3s ease;
-    }
-
-    .review-card:hover {
-        transform: translateY(-5px); /* Efecto flotante al pasar mouse en PC */
-    }
-
-    .review-text {
-        font-style: italic;
-        color: #cbd5e0;
-        margin-bottom: 20px;
-    }
-
-    .review-author {
-        font-weight: bold;
-        color: #4facfe;
-        text-transform: uppercase;
-    }
-
-    /* --- CONTACTO --- */
-    footer {
-        background-color: #020810;
-        padding: 80px 10%;
-        text-align: center;
-        border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .contact-details {
-        display: flex;
-        justify-content: center;
-        gap: 80px;
-        margin-bottom: 50px;
-    }
-
-    .contact-item span {
-        font-size: 2rem;
-        display: block;
-        margin-bottom: 15px;
-        color: #a18cd1;
-    }
-
-    /* =========================================
-       2. MEDIA QUERY: TABLET 
-       (Entre 768px y 1024px - iPads, Tablets)
-       ========================================= */
-    @media screen and (max-width: 1024px) {
-        
-        section {
-            padding: 80px 8%; /* Reducimos márgenes laterales */
+    <style>
+        :root {
+            --primary-gold: #c5a059;
+            --dark-bg: #0a0a0a;
+            --card-bg: #161616;
+            --text-light: #e0e0e0;
+            --text-muted: #a0a0a0;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem; /* Título un poco más pequeño */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .gallery-grid {
-            gap: 20px; /* Menos espacio entre fotos */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .gallery-item {
-            height: 350px; /* Fotos un poco más bajas */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .contact-details {
-            gap: 40px; /* Acercamos los iconos de contacto */
+        /* Utilidades */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #f9e1a9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-    }
 
-    /* =========================================
-       3. MEDIA QUERY: CELULAR / MÓVIL
-       (Menos de 768px - Smartphones)
-       ========================================= */
-    @media screen and (max-width: 768px) {
-
-        /* Ajuste Parallax en móvil (importante para rendimiento) */
+        /* --- HERO SECTION --- */
         header {
-            background-attachment: scroll; 
-            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: url('https://images.pexels.com/photos/7697712/pexels-photo-7697712.jpeg') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, var(--dark-bg) 95%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            z-index: 2;
+            padding: 20px;
         }
 
         .hero-content h1 {
-            font-size: 2.5rem; /* Título legible en pantalla vertical */
-            line-height: 1.1;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 5px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.8));
         }
 
         .hero-content p {
-            font-size: 1rem;
+            font-size: 1.1rem;
+            color: var(--primary-gold);
+            letter-spacing: 5px;
+            font-weight: 400;
+            margin-bottom: 30px;
         }
 
+        .btn-gold {
+            display: inline-block;
+            padding: 18px 45px;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .btn-gold:hover {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+        }
+
+        /* --- SECCIONES --- */
         section {
-            padding: 60px 6%; /* Aprovechamos más el ancho de pantalla */
+            padding: 120px 10%;
         }
 
         .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
+            text-align: center;
+            margin-bottom: 70px;
+            font-size: 2.5rem;
+            position: relative;
         }
 
-        /* Galería en 1 sola columna para ver fotos grandes */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-gold);
+            margin: 20px auto;
+        }
+
+        /* --- GALERÍA --- */
         .gallery-grid {
-            grid-template-columns: 1fr; 
-            gap: 15px;
-        }
-
-        .gallery-item {
-            height: 300px; /* Altura optimizada para scroll */
-        }
-
-        /* Testimonios uno debajo del otro */
-        .reviews-row {
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
-        .review-card {
-            padding: 25px;
+        .gallery-item {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Contacto en columna */
-        .contact-details {
-            flex-direction: column;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            filter: brightness(0.7);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(1);
+        }
+
+        /* --- REVIEWS --- */
+        #reviews {
+            background-color: #0f0f0f;
+        }
+
+        .reviews-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .contact-item span {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
+        .review-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .btn-reservar {
-            width: 100%; /* Botón ancho para dedo fácil */
-            text-align: center;
-            padding: 15px 0;
+        .review-card i.quote {
+            color: var(--primary-gold);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: block;
+            opacity: 0.5;
         }
-    }
-</style>
+
+        .review-card:hover {
+            border-bottom: 3px solid var(--primary-gold);
+            transform: translateY(-10px);
+        }
+
+        .review-text {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark-bg);
+            padding: 100px 10% 50px;
+            text-align: center;
+        }
+
+        .contact-item {
+            margin-bottom: 40px;
+        }
+
+        .contact-item i {
+            color: var(--primary-gold);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-item p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .whatsapp-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 700;
+            display: block;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+
+        .copyright {
+            margin-top: 60px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+        }
+
+        /* Móvil */
+        @media (max-width: 768px) {
+            header { background-attachment: scroll; }
+            section { padding: 80px 5%; }
+            .hero-content h1 { font-size: 3.5rem; }
+        }
+
+
+        .whatsapp-link {
+            display: inline-flex;       /* Alinea icono y texto */
+            align-items: center;
+            justify-content: center;
+            gap: 10px;                  /* Espacio entre el icono y el texto */
+            
+            background-color: #128c7e;  /* Verde oficial de WhatsApp */
+            color: white !important;    /* Forzamos el color blanco del texto */
+            text-decoration: none;
+            
+            padding: 15px 30px;
+            border-radius: 50px;        /* Bordes redondeados (estilo píldora) */
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); /* Sombra suave verde */
+        }
+
+        .whatsapp-link:hover {
+            background-color: #128c7e;  /* Un verde más oscuro al pasar el mouse */
+            transform: translateY(-3px); /* Pequeño salto hacia arriba */
+            box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4);
+        }
+
+        .whatsapp-link i {
+            font-size: 1.4rem;          /* Icono un poco más grande */
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <div class="overlay"></div>
         <div class="hero-content">
-            <h1 class="text-gradient">SAMPLE STYLISH</h1>
-            <p>CORTE · ESTILO · PRECISIÓN</p>
-            <a href="#contact" class="btn-reservar">Agendar Cita</a>
+            <p>Cortes de cabello</p>
+            <h1 class="text-gradient">GABO</h1>
+            <a href="#contact" class="btn-gold">Contactame</a>
         </div>
     </header>
 
@@ -313,55 +293,52 @@
         <h2 class="section-title">Galeria</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://i.pinimg.com/736x/07/6e/f5/076ef5dbd7822128f154521c65c33deb.jpg" alt="Corte Fade">
+                <img src="https://i.pinimg.com/736x/07/6e/f5/076ef5dbd7822128f154521c65c33deb.jpg" alt="Corte Moderno">
             </div>
             <div class="gallery-item">
-                <img src="https://i.pinimg.com/736x/ed/24/5f/ed245f52f535ad1de62fa2bacf42b683.jpg" alt="Barba y Estilo">
+                <img src="https://i.pinimg.com/736x/ed/24/5f/ed245f52f535ad1de62fa2bacf42b683.jpg" alt="Diseño de Barba">
             </div>
             <div class="gallery-item">
-                <img src="https://hairstylesfeed.com/wp-content/uploads/2022/07/Buzz-Cut-With-Drop-Fade.jpg" alt="Tijeras y Corte">
+                <img src="https://hairstylesfeed.com/wp-content/uploads/2022/07/Buzz-Cut-With-Drop-Fade.jpg" alt="Estilo Urbano">
             </div>
             <div class="gallery-item">
-                <img src="https://edgarhairstyle.com/wp-content/uploads/2023/11/Fluffy-Waves-Mexican-Caesar-Haircut-02.jpg" alt="Cliente Feliz">
+                <img src="https://edgarhairstyle.com/wp-content/uploads/2023/11/Fluffy-Waves-Mexican-Caesar-Haircut-02.jpg" alt="Texturizado">
             </div>
         </div>
     </section>
 
     <section id="reviews">
-        <h2 class="section-title">CLIENTES</h2>
+        <h2 class="section-title">Clientes</h2>
         <div class="reviews-row">
             <div class="review-card">
-                <p class="review-text">"Esta sería la seccion de comentarios y recomendaciones de tus compañeros."</p>
-                <p class="review-author">— Carlos M.</p>
+                <i class="fa-solid fa-quote-left quote"></i>
+                <p class="review-text">"Excelente servicio de Gabriel. Se nota que domina el oficio; se toma su tiempo para que el desvanecido quede perfecto."</p>
+                <p class="review-author">CARLOS M.</p>
             </div>
             <div class="review-card">
-                <p class="review-text">"Esta sería la seccion de comentarios y recomendaciones de tus compañeros."</p>
-                <p class="review-author">— Alejandro R.</p>
+                <i class="fa-solid fa-quote-left quote"></i>
+                <p class="review-text">"Llevo años cortándome el cabello con el buen Nuñez. Sabe exactamente lo que le pido. Muy recomendado."</p>
+                <p class="review-author">EDUARDO P.</p>
             </div>
             <div class="review-card">
-                <p class="review-text">"Esta sería la seccion de comentarios y recomendaciones de tus compañeros."</p>
-                <p class="review-author">— Javier S.</p>
+                <i class="fa-solid fa-quote-left quote"></i>
+                <p class="review-text">"Muy profesional y el ambiente es de primera. Fui por una recomendación y ya soy cliente frecuente."</p>
+                <p class="review-author">JAVIER A.</p>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <div class="contact-info">
-            <h2 class="text-gradient">CONTACTO</h2>
-            <div class="contact-details">
-                <div class="contact-item">
-                    <span>📱</span>
-                    <p>+52 55 1234 5678</p>
-                </div>
-                <div class="contact-item">
-                    <span>⏰</span>
-                    <p>Lun - Sab<br>10:00 AM - 8:00 PM</p>
-                </div>
-            </div>
-            <a href="https://wa.me/123456789" class="btn-reservar">WhatsApp Directo</a>
-            <div class="copyright">
-                <br><br>&copy; 2025 SAMPLE STYLISH. Todos los derechos reservados.
-            </div>
+        <div class="contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <h2 class="text-gradient">Haz tu Cita</h2>
+            <p>+52 56 3696 2466</p>
+            <a href="https://wa.me/5636962466" class="whatsapp-link" target="_blank" rel="noopener noreferrer">
+                Enviar Mensaje
+            </a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 GABO HAIR STYLE. CRAFTED FOR GENTLEMEN.
         </div>
     </footer>
 
